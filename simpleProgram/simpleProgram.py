@@ -29,3 +29,22 @@ greet('Jack')
 greet('Jill')
 greet('Bob')
 
+#6 import, regular expressions
+import re
+for test_string in ['555-1212', 'ILL-EGAL']:
+    #test_string is 3 number + '-' + 4 number
+    if re.match(r'^\d{3}-\d{4}$', test_string):
+        print (test_string, 'is a valid US local phone number')
+    else:
+        print (test_string, 'rejected')
+
+#7 Dictionaries, generator expressions
+prices = {'apple': 0.40, 'banana': 0.50}
+my_purchase = {
+        'apple': 1,
+        'banana': 6}
+grocery_bill = sum(prices[furit] * my_purchase[furit]
+        for furit in my_purchase)
+#furit is the keyword in my_purchase, prices[furit] use keyword value furit get response value in dictionary prices
+print ('I own the grocer $%.2f' % grocery_bill)
+
